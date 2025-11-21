@@ -1,103 +1,61 @@
-# 🌐 Microservicios Locales
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Proyecto desarrollado como práctica de servicios web en Node.js.  
-Permite registrar, consultar y visualizar servicios locales en un mapa interactivo utilizando **SQLite**, **Express**, y la **API de geolocalización de OpenStreetMap (Nominatim)**.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
----
+## About Laravel
 
-## 🚀 Funcionalidad principal
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- Registrar nuevos **servicios locales** (con dirección y descripción).  
-- Obtener automáticamente las **coordenadas geográficas** de cada dirección.  
-- Visualizar los servicios en un **mapa interactivo (Leaflet)**.  
-- Enviar **solicitudes de usuarios** hacia los servicios registrados.  
-- Mantener todos los datos en una base **SQLite** persistente.
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
----
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## 🧩 Tecnologías utilizadas
+## Learning Laravel
 
-- **Node.js** y **Express.js** → para el servidor y las rutas REST.
-- **SQLite3** → como base de datos local.
-- **Leaflet.js** → para mostrar los servicios en un mapa.
-- **OpenStreetMap (API Nominatim)** → para convertir direcciones en coordenadas (geocodificación).
-- **HTML, CSS, JavaScript (frontend)** → para la interfaz de usuario.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
----
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-## ⚙️ Instalación y ejecución
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-1. Clona o descarga este repositorio.
-2. Abre una terminal en la carpeta del proyecto.
-3. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-4. Inicia el servidor:
-   ```bash
-   node index.js
-   ```
-5. Abre en tu navegador:
-   ```
-   http://localhost:3000
-   ```
+## Laravel Sponsors
 
----
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-## 📡 Endpoints principales (API REST)
+### Premium Partners
 
-| Método | Ruta | Descripción |
-|--------|------|--------------|
-| **GET** | `/servicios` | Devuelve todos los servicios registrados. |
-| **POST** | `/servicios` | Crea un nuevo servicio (usa geocodificación). |
-| **GET** | `/solicitudes` | Lista todas las solicitudes. |
-| **POST** | `/solicitudes` | Crea una nueva solicitud de usuario. |
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
----
+## Contributing
 
-## 💾 Estructura de la base de datos
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-**Tabla `servicios`**
-| Campo | Tipo | Descripción |
-|--------|------|-------------|
-| id | INTEGER | Identificador único |
-| nombre | TEXT | Nombre del servicio |
-| direccion | TEXT | Dirección completa |
-| descripcion | TEXT | Descripción del servicio |
-| lat | REAL | Latitud geográfica |
-| lon | REAL | Longitud geográfica |
+## Code of Conduct
 
-**Tabla `solicitudes`**
-| Campo | Tipo | Descripción |
-|--------|------|-------------|
-| id | INTEGER | Identificador único |
-| usuario | TEXT | Nombre del solicitante |
-| servicio | TEXT | Nombre del servicio solicitado |
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
----
+## Security Vulnerabilities
 
-## ⚠️ Errores comunes
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-- **Error de permisos PowerShell:**  
-  Ejecutar antes de usar npm:  
-  ```bash
-  Set-ExecutionPolicy RemoteSigned
-  ```
-- **Error en instalación:**  
-  Asegúrate de tener instalado **Node.js v18+** y **npm** correctamente.
+## License
 
----
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo la **Licencia MIT**.  
-Eres libre de usar, modificar y distribuir el código siempre que mantengas el aviso de derechos de autor.
-
----
-
-## 👨‍💻 Autor
-
-**Luis Santiz**  
-Proyecto académico — *Servicios Web*  
-Instituto Tecnológico de Iztapalapa  
-2025
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
