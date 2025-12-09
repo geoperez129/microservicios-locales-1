@@ -6,7 +6,7 @@ const axios = require('axios');
 const db = require('./db'); // Asegúrate de que db.js esté correcto
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware (Correcto y NECESARIO para leer JSON)
 app.use(cors());
